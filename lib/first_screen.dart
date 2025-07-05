@@ -29,27 +29,27 @@ class _FirstScreenState extends State<FirstScreen> {
     // Implement your internet connection check logic here
     if (connectionStatus == ConnectivityResult.mobile) {
       // Mobile network available.
-      _showToast('Mobile network is available');
+      _showToast('Mobile network is available', context);
     } else if (connectionStatus.contains(ConnectivityResult.wifi)) {
       // Wi-fi is available.
       // Note for Android:
       // When both mobile and Wi-Fi are turned on system will return Wi-Fi only as active network type
-      _showToast('Wi-Fi is available');
+      _showToast('Wi-Fi is available', context);
     } else if (connectionStatus.contains(ConnectivityResult.ethernet)) {
       // Ethernet connection available.
-      _showToast('Ethernet connection is available');
+      _showToast('Ethernet connection is available', context);
     } else if (connectionStatus.contains(ConnectivityResult.vpn)) {
       // Vpn connection active.
       // Note for iOS and macOS:
       // There is no separate network interface type for [vpn].
       // It returns [other] on any device (also simulator)
-      _showToast('VPN connection is active');
+      _showToast('VPN connection is active', context);
     } else if (connectionStatus.contains(ConnectivityResult.bluetooth)) {
       // Bluetooth connection available.
-      _showToast('Bluetooth connection is available');
+      _showToast('Bluetooth connection is available', context);
     } else if (connectionStatus.contains(ConnectivityResult.other)) {
       // Connected to a network which is not in the above mentioned networks.
-      _showToast('Connected to a network which is not in the above mentioned networks');
+      _showToast('Connected to a network which is not in the above mentioned networks', context);
     } else if (connectionStatus.contains(ConnectivityResult.none)) {
       // No available network types
       _showAlertDialog(context, 'No Internet Connection', 'Please check your internet connection and try again.');
